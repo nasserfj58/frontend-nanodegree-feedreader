@@ -16,3 +16,9 @@ I tested that the loadFeed() method load at least one entry by checking that the
 
 ### For the fourth one:
 I tested that the loadFeed() method load new feed each time it's called, by comparing the last result with the new result.
+
+## References:
+- https://jasmine.github.io/2.0/introduction.html
+- https://stackoverflow.com/questions/16840622/jasmine-checking-addclass-on-click
+- https://api.jquery.com/hasclass/
+- https://api.jquery.com/children/
