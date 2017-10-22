@@ -40,7 +40,7 @@ $(function() {
          it('Names defined',function(){
 
            allFeeds.forEach(function(item){
-          
+
              if(item.name)
               counter++;
            });
@@ -78,7 +78,12 @@ $(function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
+      beforeEach(function(done) {
+        setTimeout(function() {
 
+          done();
+        }, 3000);
+      });
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -86,6 +91,11 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         it('at least one entry',function(){
+
+           expect($('.feed').has('a').length).not.toBe(0);
+
+         });
    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
