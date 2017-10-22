@@ -12,6 +12,12 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+         var counter;
+
+         beforeEach(function() {
+           counter=0;
+         });
+
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -19,9 +25,9 @@ $(function() {
 
 
          it('Urls defined',function(){
-           var counter = 0;
+
            allFeeds.forEach(function(item){
-            //  console.log(item.url);
+
              if(item.url)
               counter++;
            });
@@ -32,9 +38,9 @@ $(function() {
 
 
          it('Names defined',function(){
-           var counter = 0;
+
            allFeeds.forEach(function(item){
-            //  console.log(item.url);
+          
              if(item.name)
               counter++;
            });
@@ -55,8 +61,6 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('is hidden',function(){
-          // var body = $('body').
-
            expect($('body').hasClass("menu-hidden")).toBe(true);
          });
 
