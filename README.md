@@ -1,3 +1,18 @@
-19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass.
-21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+# For This Project:
+## I test 4 main aspects of this Project:
+1. RSS Feeds.
+2. The sidebar menu.
+3. Initial Entries that come from external api. (async)
+4.  New Feed Selection that come. (async)
+
+### For the first one:
+I test the allFeeds array in app.js and make sure that every item has name and url.
+
+### For the second one:
+I tested the sidebar (in index.html) and make sure that it is hidden by default and when the hamburger icon clicked, the menu appear.(the class of the menu removed when icon clicked and appear when the menu closed).
+
+### For the third one:
+I tested that the loadFeed() method load at least one entry by checking that the div with .feed class has more than 0 links.
+
+### For the fourth one:
+I tested that the loadFeed() method load new feed each time it's called, by comparing the last result with the new result.
