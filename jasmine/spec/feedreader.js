@@ -78,6 +78,7 @@ $(function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
+
       beforeEach(function(done) {
         setTimeout(function() {
 
@@ -92,18 +93,26 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('at least one entry',function(){
-
            expect($('.feed').has('a').length).not.toBe(0);
-
          });
    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
+      var containerContent = $('.feed');
+      beforeEach(function(done) {
+        setTimeout(function() {
+
+          done();
+        }, 3000);
+      });
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         it('Content is Changing',function(){
+           expect(containerContent.children()).not.toBe($('.feed').children());
+         });
    });
 }());
