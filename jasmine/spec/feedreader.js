@@ -19,12 +19,13 @@ $(function() {
          it('Urls defined',function(){
 
            allFeeds.forEach(function(item){
-            //if there is url, increase the counter
-             if(item.url)
-              counter++;
+            //check if there is url
+             expect(item.url).toBeDefined();
+             //check if the url is not empty
+             expect(item.url).not.toEqual("");
+
            });
-           // all elements have url if the counte === array.length
-           expect(counter).toBe(allFeeds.length);
+
 
          });
 
@@ -32,12 +33,13 @@ $(function() {
          it('Names defined',function(){
 
            allFeeds.forEach(function(item){
-               //if there is name, increase the counter
-             if(item.name)
-              counter++;
+
+               //check if there is name
+                expect(item.url).toBeDefined();
+                //check if the name is not empty
+                expect(item.url).not.toEqual("");
            });
-           // all elements have name if the counte === array.length
-           expect(counter).toBe(allFeeds.length);
+
 
          });
 
@@ -47,10 +49,7 @@ $(function() {
 
     describe('The menu', function() {
 
-           it('is hidden',function(){
-           // if the body has the menu hidden class then the menu is hidden by default
-           expect($('body').hasClass("menu-hidden")).toBe(true);
-         });
+
 
           it('changes when icon clicke visibility',function(){
             // if the link that has the menu-icon-link class clicked then the body will not have the menu hidden class
@@ -58,16 +57,22 @@ $(function() {
             // check if body not  have menu-hidden class
              expect($('body').hasClass("menu-hidden")).not.toBe(true);
           });
-    });
 
+          it('is hidden when click',function(){
+            // if the link that has the menu-icon-link class clicked clicked then the body will have the menu hidden clas
+            $('.menu-icon-link').click();
+          // if the body has the menu hidden class then the menu is hidden by default
+          expect($('body').hasClass("menu-hidden")).toBe(true);
+        });
+    });
+    //last two issues 
       describe('Initial Entries', function() {
 
       beforeEach(function(done) {
-        //set time out becuase the test below test asynchronous method
-        setTimeout(function() {
-          //will whait until async is done
+      loadFeed();
+      //will whait until async is done
           done();
-        }, 3000);
+
       });
 
       it('at least one entry',function(){

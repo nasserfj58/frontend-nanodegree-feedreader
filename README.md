@@ -1,3 +1,7 @@
+# To Get Started:
+Download this project or clone it to your computer, and open index.html. you can see Jasmine test cases in the end of index.html
+
+
 # For This Project:
 ## I test 4 main aspects of this Project:
 1. RSS Feeds.
