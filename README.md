@@ -24,5 +24,4 @@ I tested that the loadFeed() method load new feed each time it's called, by comp
 ## References:
 - https://jasmine.github.io/2.0/introduction.html
 - https://stackoverflow.com/questions/16840622/jasmine-checking-addclass-on-click
-- https://api.jquery.com/hasclass/
 - https://api.jquery.com/children/
