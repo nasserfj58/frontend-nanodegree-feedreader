@@ -71,17 +71,16 @@ $(function() {
       describe('Initial Entries', function() {
 
       beforeEach(function(done) {
-        setTimeout(function() {
         //will whait until async is done
         loadFeed(0);
           done();
-        }, 3000);
+
       });
 
       it('at least one entry',function(){
 
            //check if div that has feed class have any link (linls>0)
-           expect($('.feed .entry').length >= 1).toBe(true);
+           expect($('.feed  .entry').length >= 1).toBe(true);
       });
    });
 
