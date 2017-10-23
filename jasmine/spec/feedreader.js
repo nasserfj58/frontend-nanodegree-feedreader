@@ -1,12 +1,14 @@
 
 $(function() {
-
+      function Feed(name,url){
+        name = this.name;
+        url = this.url;
+      }
         describe('RSS Feeds', function() {
-         var counter;
-
-         beforeEach(function() {
-           counter = 0;
-         });
+        var feed;
+        beforeEach(function(){
+          feed = new Feed();
+        });
 
         it('are defined', function() {
 
@@ -15,10 +17,10 @@ $(function() {
 
         });
 
-
          it('Urls defined',function(){
 
            allFeeds.forEach(function(item){
+
             //check if there is url
              expect(item.url).toBeDefined();
              //check if the url is not empty
@@ -35,9 +37,9 @@ $(function() {
            allFeeds.forEach(function(item){
 
                //check if there is name
-                expect(item.url).toBeDefined();
+                expect(item.name).toBeDefined();
                 //check if the name is not empty
-                expect(item.url).not.toEqual("");
+                expect(item.name).not.toEqual("");
            });
 
 
@@ -65,36 +67,52 @@ $(function() {
           expect($('body').hasClass("menu-hidden")).toBe(true);
         });
     });
-    //last two issues 
+    //last two issues
       describe('Initial Entries', function() {
 
       beforeEach(function(done) {
-      loadFeed();
-      //will whait until async is done
+        setTimeout(function() {
+        //will whait until async is done
+        loadFeed(0);
           done();
-
+        }, 3000);
       });
 
       it('at least one entry',function(){
+
            //check if div that has feed class have any link (linls>0)
-           expect($('.feed').has('a').length).not.toBe(0);
+           expect($('.feed .entry').length >= 1).toBe(true);
       });
    });
 
     describe('New Feed Selection', function() {
           //container before loadFeed();
-          var containerContent = $('.feed');
+          var containerContent;
+          var containerContent2;
 
           beforeEach(function(done) {
             //set time out becuase the test below test asynchronous method
             setTimeout(function() {
+              loadFeed(0);
             //will whait until async is done
               done();
             }, 3000);
+          //set to feed div after first call
+          containerContent = $('.feed').children();
+
+          //set time out becuase the test below test asynchronous method
+          setTimeout(function() {
+          //will whait until async is done
+          loadFeed(0);
+            done();
+          }, 3000);
+          //set to feed div after second call
+         containerContent2 = $('.feed').children();
+
           });
           it('Content is Changing',function(){
                //check it the container before loadFeed() has the same elements after load feed
-            expect(containerContent.children()).not.toBe($('.feed').children());
+            expect(containerContent).not.toBe(containerContent2);
          });
    });
 }());
