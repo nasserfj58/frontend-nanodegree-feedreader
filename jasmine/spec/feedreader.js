@@ -72,8 +72,8 @@ $(function() {
 
       beforeEach(function(done) {
         //will whait until async is done
-        loadFeed(0);
-          done();
+        loadFeed(0,done());
+          
 
       });
 
@@ -90,21 +90,18 @@ $(function() {
           var containerContent2;
 
           beforeEach(function(done) {
-            //set time out becuase the test below test asynchronous method
-            setTimeout(function() {
-              loadFeed(0);
+            
+              
             //will whait until async is done
-              done();
-            }, 3000);
+              loadFeed(0,done());
+            
           //set to feed div after first call
           containerContent = $('.feed').children();
 
-          //set time out becuase the test below test asynchronous method
-          setTimeout(function() {
           //will whait until async is done
-          loadFeed(0);
-            done();
-          }, 3000);
+          loadFeed(1, done());
+           
+         
           //set to feed div after second call
          containerContent2 = $('.feed').children();
 
