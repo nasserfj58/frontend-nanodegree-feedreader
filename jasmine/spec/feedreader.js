@@ -5,10 +5,7 @@ $(function() {
         url = this.url;
       }
         describe('RSS Feeds', function() {
-        var feed;
-        beforeEach(function(){
-          feed = new Feed();
-        });
+       
 
         it('are defined', function() {
 
