@@ -94,17 +94,17 @@ $(function() {
             
               
             //will whait until async is done
-              loadFeed(0,done());
+              loadFeed(0,done);
             
           //set to feed div after first call
-          containerContent = $('.feed').children();
+          containerContent = $('.feed').html();
 
           //will whait until async is done
-          loadFeed(1, done());
+          loadFeed(1, done);
            
          
           //set to feed div after second call
-         containerContent2 = $('.feed').children();
+         containerContent2 = $('.feed').html();
 
           });
           it('Content is Changing',function(){
