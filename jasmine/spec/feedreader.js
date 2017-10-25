@@ -41,12 +41,12 @@ $(function() {
           });
 
           it('is showing and hidding when clicked twise',function(){
-            // if the link that has the menu-icon-link class clicked, then the body will not have the menu hidden class
+            // the link with  menu-icon-link class will be clicked
             $('.menu-icon-link').click();
             // check if body not have menu-hidden class after link is clicked
              expect($('body').hasClass("menu-hidden")).not.toBe(true);
 
-             // if the link that has the menu-icon-link class clicked clicked then the body will have the menu hidden clas
+             // the link with  menu-icon-link class will be clicked again
             $('.menu-icon-link').click();
 
           // check if the body has the menu hidden class after the second click on the link
@@ -58,7 +58,7 @@ $(function() {
     describe('Initial Entries', function(){
 
       beforeEach(function(done){
-        //load the fedd in index 0 and pass the done callback
+        //load the udacityFeeds (index 0) and pass the done callback
         loadFeed(0,done);
       });
 
@@ -77,7 +77,7 @@ $(function() {
             // load udacityFeeds (index 0)
             loadFeed(0,function(){
 
-              //set udacity feed
+              //set udacityFeedds with the contten insid feed div (first call)
               udacityFeeds = $('.feed').html();
               //load cssTricksFeeds (index 1)
               loadFeed(1,function(){
@@ -96,6 +96,8 @@ $(function() {
             it will be the same value as the udacityFeeds, and if I set it inside loadFeed(1,function(){})
             the jasmin time out error will be thrown and test case will fail
           */
+          
+            // set cssTricksFeeds with the contten insid feed div (second call)
             cssTricksFeeds = $('.feed').html();
 
             //check it the html of the first feed will have the same elements as the second feed
