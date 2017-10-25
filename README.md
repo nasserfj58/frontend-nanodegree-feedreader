@@ -20,7 +20,7 @@ I tested the sidebar **(in index.html)** and make sure that it is hidden by defa
 I tested that the loadFeed() method load at least one entry by checking that the div with feed class has more than 0 entry.
 
 ### For the fourth one:
-I tested that that if you call loadFeed() twice with different parameters, the content will change  
+I tested that if you call loadFeed() twice with different parameters, the content will change.
 
 ## References:
 - https://jasmine.github.io/2.0/introduction.html
