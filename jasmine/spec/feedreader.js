@@ -109,7 +109,7 @@ $(function() {
           });
           it('Content is Changing',function(){
                //check it the container before loadFeed() has the same elements after load feed
-            expect(containerContent).not.toBe(containerContent2);
+            expect(containerContent).not..toMatch(containerContent2);
          });
    });
 }());
