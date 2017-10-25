@@ -25,4 +25,4 @@ I tested that if you call loadFeed() twice with different parameters, the conten
 ## References:
 - https://jasmine.github.io/2.0/introduction.html
 - https://stackoverflow.com/questions/16840622/jasmine-checking-addclass-on-click
-http://api.jquery.com/html/
+- http://api.jquery.com/html/
