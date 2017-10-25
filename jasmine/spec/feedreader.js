@@ -50,15 +50,19 @@ $(function() {
 
 
 
-          it('changes when icon clicke visibility',function(){
+          it('hidden by defualt',function(){
+           
+            // check if body have menu-hidden class
+             expect($('body').hasClass("menu-hidden")).toBe(true);
+          });
+
+          it('is hidden when click',function(){
             // if the link that has the menu-icon-link class clicked then the body will not have the menu hidden class
             $('.menu-icon-link').click();
             // check if body not  have menu-hidden class
              expect($('body').hasClass("menu-hidden")).not.toBe(true);
-          });
-
-          it('is hidden when click',function(){
-            // if the link that has the menu-icon-link class clicked clicked then the body will have the menu hidden clas
+                
+             // if the link that has the menu-icon-link class clicked clicked then the body will have the menu hidden clas
             $('.menu-icon-link').click();
           // if the body has the menu hidden class then the menu is hidden by default
           expect($('body').hasClass("menu-hidden")).toBe(true);
@@ -69,7 +73,7 @@ $(function() {
 
       beforeEach(function(done) {
         //will whait until async is done
-        loadFeed(0,done());
+        loadFeed(0,done);
           
 
       });
