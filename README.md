@@ -10,18 +10,18 @@ Download this project or clone it to your computer, and open index.html. you can
 4.  New Feed Selection that come. (async)
 
 ### For the first one:
-I test the allFeeds array in app.js and make sure that every item has name and url.
+I test the allFeeds array in app.js and make sure that every item has name and url. (name and url must be defined and not empty)
 
 ### For the second one:
-I tested the sidebar (in index.html) and make sure that it is hidden by default and when the hamburger icon clicked, the menu appear.(the class of the menu removed when icon clicked and appear when the menu closed).
+I tested the sidebar (in index.html) and make sure that it is hidden by default and when the hamburger icon clicked, the menu appear and the menu will disappear if you click it again.(the class of the menu removed when icon clicked and appear when the menu closed).
 
 ### For the third one:
-I tested that the loadFeed() method load at least one entry by checking that the div with .feed class has more than 0 links.
+I tested that the loadFeed() method load at least one entry by checking that the div with feed class has more than 0 entry.
 
 ### For the fourth one:
-I tested that the loadFeed() method load new feed each time it's called, by comparing the last result with the new result.
+I tested that that if you call loadFeed() twice with different parameters, the content will change  
 
 ## References:
 - https://jasmine.github.io/2.0/introduction.html
 - https://stackoverflow.com/questions/16840622/jasmine-checking-addclass-on-click
-- https://api.jquery.com/children/
+http://api.jquery.com/html/
